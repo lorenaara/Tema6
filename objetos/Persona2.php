@@ -3,12 +3,12 @@ class Persona{
     private $nombre;
     private $edad;
     private $email;
-    private $id;
+    public static $id=0;
 
     //metodos
     public function __construct($nombre,$edad,$email)
     {
-        $this->id=1;
+        self::$id=$this::$id+1;
         $this->edad= $edad;
         $this->nombre= $nombre;
         $this->email=$email;
@@ -17,23 +17,13 @@ class Persona{
     {
        // echo "<br>se destruye ".$this;
     }
-    public function getNombre(){
-        return $this->nombre;
+    public function __get($get)
+    {
+        return $this->$get;
     }
-    public function getEdad(){
-        return $this->edad;
-    }
-    public function getEmail(){
-        return $this->email;
-    }
-    public function setNombre($nombre){
-        $this->nombre=$nombre;
-    }
-    public function setEdad($edad){
-        $this->edad=$edad;
-    }
-    public function setEmail($email){
-        $this->email=$email;
+    public function __set($clave, $valor)
+    {
+        $this->$clave=$valor;
     }
     public function __toString()
     {
