@@ -45,4 +45,14 @@ class VentaDAO extends FactoryBD implements DAO{
         }
         return true;
     }
+
+    public static function update($object){
+        $sql= 'update venta set user=?, fecha=?, codProd=?, cantidad=?, precio=? where id=?';
+        $datos=array($object->user, $object->fecha, $object->codProd, $object->cantidad, $object->precio, $object->id);
+        $devuelve=parent::ejecuta($sql, $datos);
+        if($devuelve->rowCount()==0){
+            return false;
+        }
+        return true;
+    }
 }
