@@ -5,16 +5,16 @@ class ConciertosCOntrolador extends ControladorPadre{
         $metodo= $_SERVER['REQUEST_METHOD']; //cosigue el metodo(get, post)
         switch($metodo){
             case 'GET':
-                buscar();
+                $this->buscar();
                 break;
             case 'POST':
-                insertar();
+                $this->insertar();
                 break;
             case 'PUT':
-                modificar();
+                $this->modificar();
                 break;
             case 'DELETE':
-                borrar();
+                $this->borrar();
                 break;
             default:
             ControladorPadre::respuesta('',array('HTTP/1.1 400 No se ha utilizado el metodo correcto'));
