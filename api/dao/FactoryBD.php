@@ -1,5 +1,5 @@
 <?
-
+require_once './configuracion/conexion.php';
 
 Class FactoryBD{
     public static function ejecuta($sql,$datos){

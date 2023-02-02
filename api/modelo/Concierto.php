@@ -1,4 +1,5 @@
 <?
+
 class Concierto{
     private $id;
     private $grupo;
@@ -6,13 +7,14 @@ class Concierto{
     private $precio;
     private $lugar;
 
-    public function __construct($grupo, $fecha, $precio, $lugar)
+    public function __construct($grupo,$fecha,$precio,$lugar)
     {
-        $this->grupo=$grupo;
-        $this->fecha=$fecha;
-        $this->precio=$precio;
-        $this->lugar=$lugar;
+        $this->grupo = $grupo;
+        $this->fecha = $fecha;
+        $this->precio = $precio;
+        $this->lugar = $lugar;
     }
+
     public function __get($get){
         if(property_exists(__CLASS__,$get))
             return $this->$get;
