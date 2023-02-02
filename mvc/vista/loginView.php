@@ -12,5 +12,8 @@ if (isset($_SESSION['error'])) {
     <label for="pass">Contraseña</label>
     <input type="password" name="pass" id="pass">
     <input type="submit" value="Enviar" name="enviar">
+    <div>
+            <p>¿No tienes cuenta? </p><input type="submit" name="registro" value="Registrarse">
+        </div>
 </form>
 </div>
