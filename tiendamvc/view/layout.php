@@ -1,5 +1,7 @@
 <?
 require_once ('./config/configuracion.php');
+require_once('./core/funcionesSesiones.php');
+
 try{
     $conexion = new PDO('mysql:host='. HOST  . ';dbname=' . BBDD, USER, PASS);
 }catch(PDOException $e){
@@ -34,7 +36,39 @@ try{
         </div>
     </header>
     <?
-       
+       if(estaValidado()){
+        if(esAdmin()){
+    ?>
+     <nav>
+        <ul>
+            <li><a href="./productos.php">Producto</a></li>
+            <li><a href="./albaran.php">Albaran</a></li>
+            <li><a href="./ventas.php">Ventas</a></li>
+        </ul>
+     </nav>
+
+    <?
+        }elseif(esModerador()){
+    ?>
+       <nav>
+                
+                <ul>
+                    <li ><a href="./productos.php">Producto</a></li>
+                    <li><a href="./albaran.php">Albaran</a></li>
+                    <li><a href="./ventas.php">Ventas</a></li>
+                </ul>
+            </nav>
+    <?
+        }else{
+    ?>
+            <nav>
+                
+            <ul>
+                <li><a href="./productos.php">Producto</a></li>
+        </nav>
+    <?
+        }
+       }
     ?>
 
 

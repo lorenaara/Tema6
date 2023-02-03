@@ -123,7 +123,7 @@ class ConciertosControlador extends ControladorPadre
                 if(ConciertoDAO::update($concierto)){
                     self::respuesta(
                         '',
-                        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                        array('Content-Type: application/json', 'HTTP/1.1 201 Modificado')
                     );
                 }
                 }
@@ -142,12 +142,12 @@ class ConciertosControlador extends ControladorPadre
             if(ConciertoDAO::delete($recurso[2])){
                 self::respuesta(
                     '',
-                    array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+                    array('Content-Type: application/json', 'HTTP/1.1 204 Borrado')
                 ); 
             }else{
                 self::respuesta(
                     '',
-                    array('Content-Type: application/json', 'HTTP/1.1 200 No se ha borrado ninguno')               
+                    array('Content-Type: application/json', 'HTTP/1.1 204 No se ha borrado ninguno')               
                  );
             }
         }else{
