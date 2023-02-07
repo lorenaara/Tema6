@@ -1,0 +1,11 @@
+<?
+if(isset($_REQUEST['verProductos'])){
+    $_SESSION['controlador']=$controlador['productos'];
+    $_SESSION['vista']=$vista['productos'];
+}elseif(isset($_REQUEST['insertProductos'])){
+    $_SESSION['controlador']=$controlador['productos'];
+    $_SESSION['vista']=$vista['insertProductos'];
+}elseif(isset($_REQUEST['modProductos'])){
+    $_SESSION['controlador']=$controlador['productos'];
+    $_SESSION['vista']=$vista['modProductos'];
+}

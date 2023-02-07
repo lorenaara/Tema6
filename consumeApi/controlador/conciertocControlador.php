@@ -14,6 +14,6 @@ if(isset($_REQUEST['accion'])){
         $lista=get();
         require '../vista/listar.php';
     }else{
-        
+        require '../vista/formInsert.php';
     }
 }
